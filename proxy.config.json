@@ -1,0 +1,7 @@
+{
+    "/COMPAS/*":{
+        "target" : "http://localhost:8080/",
+        "changeOrigin" : false,
+        "secure" : false
+        }
+}

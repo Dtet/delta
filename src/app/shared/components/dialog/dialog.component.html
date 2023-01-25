@@ -1,0 +1,18 @@
+<!-- <h1 mat-dialog-title>Filtro</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <input matInput>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.name">Ok</button>
+</div> -->
+
+<h2 mat-dialog-title>Job Application</h2>
+<mat-dialog-content>
+  <app-form 
+    [questions]="questions" [isDialog]="true"
+    (close)="closeDialog()" (submit)="closeDialog()"></app-form>
+</mat-dialog-content>
