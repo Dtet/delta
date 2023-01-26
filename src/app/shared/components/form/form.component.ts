@@ -1,4 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { QuestioncontrolService } from '@shared/services/questioncontrol.service';
+import { QuestionBase } from 'src/app/utils/form-select';
 
 @Component({
   selector: 'app-form',
@@ -8,16 +12,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class FormComponent implements OnInit {
 
   @Input() questions: QuestionBase<any>[] = [];
-  @Input() isDialog: boolean;
+  @Input() isDialog!: boolean;
 
   @Output() close = new EventEmitter<any>();
   @Output() submit = new EventEmitter<any>();
 
-  form: FormGroup;
+  form!: FormGroup;
   payLoad = '';
 
   constructor(
-    private qcs: QuestionControlService,
+    private qcs: QuestioncontrolService,
     private _snackBar: MatSnackBar) {  }
 
     ngOnInit() {

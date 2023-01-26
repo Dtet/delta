@@ -1,7 +1,8 @@
 <div>
-    <form (ngSubmit)="onSubmit()" [FormGroup]="form">
+    <form (ngSubmit)="onSubmit()" FormGroup="form">
         <div *ngFor="let question of questions" class="form-row">
-
+            <app-select [question]="question" [form]="form">
+            </app-select>
         </div>
         <div class="form-row">
             <button mat-strocked-button type="submit" [disabled]="!form.valid">Guardar</button>
