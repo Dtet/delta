@@ -8,6 +8,7 @@ import { TableComponent } from './components/table/table.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterComponent } from './components/filter/filter.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SelectComponent,
     FormComponent,
     TableComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,

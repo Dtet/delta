@@ -15,5 +15,5 @@ export class DataService {
       'Content-Type': 'application/json'
     }),
   };
-  
+  getData(): void {}
 }
