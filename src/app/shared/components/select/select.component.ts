@@ -1,3 +1,4 @@
+import { IFiltro } from './../../../models/filter.model';
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -12,7 +13,7 @@ export class SelectComponent  {
   @Input() question!: QuestionBase<any>;
   @Input() form!: FormGroup;
 
-  people$: Observable<Person[]>;
+  people$!: Observable<IFiltro[]> ;
 
   get isValid() {return this.form.controls [this.question.key].valid; }
   constructor() { }

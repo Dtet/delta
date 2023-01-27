@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,17 @@ import { Injectable } from '@angular/core';
 
 export class DataService {
 
-  constructor( private htpp: HttpClient) { }
+  constructor(private http: HttpClient) { }
   private selectUrl = '/COMPAS/';
   private httpOptions = {
-    headers: new HttpHeaders ({
+    headers: new HttpHeaders({
       'Content-Type': 'application/json'
     }),
   };
-  getData(): void {}
-}
+  getInfo(): Observable<any> {
+    return this.http.get(this.selectUrl)
+      .pipe(
+        map((response: any) => response
+          .map((data: any) => data['Serie'])))
+  }
+} 

@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { IFiltro } from './../../../models/filter.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -17,21 +18,27 @@ export class FilterComponent implements OnInit {
     asegurado: new FormControl(''),
     cedente: new FormControl(''),
     corredor: new FormControl(''),
-    domicilio: new FormControl(''), 
+    domicilio: new FormControl(''),
     moneda: new FormControl(''),
     grupo_ramo: new FormControl(''),
-    ramo:new FormControl(''),
-    contrato:new FormControl(''),
-    negocio:new FormControl(''),
-    indole:new FormControl(''),
-    estado:new FormControl(''),
-    usuario_registrado:new FormControl(''),
-    nro_facultativo:new FormControl(''),
-    nrofa_especifico:new FormControl('')
-});
-  constructor() { }
+    ramo: new FormControl(''),
+    contrato: new FormControl(''),
+    negocio: new FormControl(''),
+    indole: new FormControl(''),
+    estado: new FormControl(''),
+    usuario_registrado: new FormControl(''),
+    nro_facultativo: new FormControl(''),
+    nrofa_especifico: new FormControl('')
+  });
+  subs: any;
+  options: any;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.subs.add(this.dataService.getInfo().subscribe(data => {
+      this.options = data;
+    }));
   }
 
 }

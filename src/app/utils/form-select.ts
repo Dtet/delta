@@ -1,11 +1,11 @@
 export class QuestionBase<T> {
-    value: any;
+    value: T | undefined;
     key: string;
     label: string;
     required: boolean;
     order: number;
     controlType: string;
-   
+    options: { key: string; value: string; }[] | undefined;
 
     constructor (options: {
         value?: T,
@@ -14,6 +14,7 @@ export class QuestionBase<T> {
         required?: boolean,
         order?: number,
         controlType?: string
+        options?: {key: string, value: string}[];
     } = {}) {
         this.value = options.value;
         this.key = options.key || '';

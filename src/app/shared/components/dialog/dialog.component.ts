@@ -3,6 +3,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { QuestioncontrolService } from '@shared/services/questioncontrol.service';
 import { QuestionBase } from 'src/app/utils/form-select';
+import { QuestionService } from '@shared/services/question.service';
 
 @Component({
   selector: 'app-dialog',
@@ -11,15 +12,17 @@ import { QuestionBase } from 'src/app/utils/form-select';
   providers: [ QuestioncontrolService ]
 })
 export class DialogComponent implements OnInit {
-  @Input() questions: QuestionBase<any>[] = [];
+  @Input() questions$: QuestionBase<any>[] = [];
   constructor(
     private qcs: QuestioncontrolService,
     private _snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IDialogData
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData,
+    private service: QuestionService
     // public dialogRef: MatDialogRef<DialogComponent>,
     // @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) { this.questions = this.data.questions; }
+  // ) { this.questions$ = this.data.questions; }
+  ) { this.questions$ = service.getQuestions(); }
 
   // onNoClick(): void {
   //   this.dialogRef.close();

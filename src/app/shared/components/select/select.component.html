@@ -1,4 +1,4 @@
-<div formGroup="form">
+<div [formGroup]="form">
 
     <div [ngSwitch]="question.controlType">
 
@@ -8,27 +8,27 @@
             placeholder="Input" 
             id="question.key" 
             type="question.type" 
-            formControlName="question.key">
+            [formControlName]="question.key">
         </mat-form-field>
 
         <ng-select  [items]="people$ | async"
         bindLabel="name"
         autofocus
         bindValue="id"
-        [(ngModel)]="selectedPersonId">
+        >
     </ng-select>
 
         <mat-form-field *ngSwitchCase="'dropdown'">
             <mat-label>{{question.label}}</mat-label>
-            <mat-select formControlName="question.key">
-                <mat-option *ngFor="let opt of question['options']" value="opt.key">
+            <mat-select [formControlName]="question.key">
+                <mat-option *ngFor="let opt of question.options" value="opt.key">
                     {{opt.value}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
 
         <label *ngSwitchCase="'radio'" class="example-radio-label">{{question.label}}</label>
-        <mat-radio-group *ngSwitchCase="'radio'" formControlName="question.key"
+        <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="question.key"
         class="example-radio-group">
 
         <mat-radio-button class="example-radio-button" *ngForm="let opt of question.options" value="opt.key">

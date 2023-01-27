@@ -7,11 +7,12 @@ import { QuestionBase } from 'src/app/utils/form-select';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  providers: [ QuestioncontrolService ]
 })
 export class FormComponent implements OnInit {
 
-  @Input() questions: QuestionBase<any>[] = [];
+  @Input() questions: QuestionBase<string>[] | null = [];
   @Input() isDialog!: boolean;
 
   @Output() close = new EventEmitter<any>();
@@ -25,7 +26,7 @@ export class FormComponent implements OnInit {
     private _snackBar: MatSnackBar) {  }
 
     ngOnInit() {
-      this.form = this.qcs.toFormGroup(this.questions);
+      this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
     }
   
     onSubmit() {

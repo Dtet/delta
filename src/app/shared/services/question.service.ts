@@ -11,7 +11,7 @@ export class QuestionService {
 
   getQuestions() {
 
-    let questions: QuestionBase<any>[] = [
+    const questions: QuestionBase<string>[] = [
 
       new DropdownQuestion({
         key: 'brave',

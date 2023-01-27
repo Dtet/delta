@@ -2,7 +2,7 @@ import { QuestionBase } from "./form-select";
 
 export class RadioQuestion extends QuestionBase<string> {
     override controlType = 'radio';
-    options: {key: string, value: string} [] = [];
+    override options: {key: string, value: string} [] = [];
 
     constructor(options: {} = {}) {
         super(options);
