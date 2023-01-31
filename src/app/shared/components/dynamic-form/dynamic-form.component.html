@@ -1,0 +1,7 @@
+<form [formGroup]="dynamicFormGroup">
+    <div *ngFor="let field of fields">
+        <app-dynamic-field-input [field]="field"></app-dynamic-field-input>
+        <!-- <app-dynamic-error [fieldName]="field.fieldName"></app-dynamic-error> -->
+    </div>
+</form>
+

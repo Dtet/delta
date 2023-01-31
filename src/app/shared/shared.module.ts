@@ -9,6 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './components/filter/filter.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { DynamicComponent } from './components/dynamic/dynamic.component';
+import { DynamicFieldInputComponent } from './components/dynamic-field/dynamic-field-input/dynamic-field-input.component';
+import { DynamicFieldSelectComponent } from './components/dynamic-field/dynamic-field-select/dynamic-field-select.component';
+import { DynamicFieldComponent } from './components/dynamic-field/dynamic-field.component';
+import { DynamicErrorComponent } from './components/dynamic-form/dynamic-error/dynamic-error.component';
 
 
 @NgModule({
@@ -18,7 +24,13 @@ import { FilterComponent } from './components/filter/filter.component';
     FormComponent,
     TableComponent,
     HeaderComponent,
-    FilterComponent
+    FilterComponent,
+    DynamicFormComponent,
+    DynamicComponent,
+    DynamicFieldInputComponent,
+    DynamicFieldSelectComponent,
+    DynamicFieldComponent,
+    DynamicErrorComponent
   ],
   imports: [
     CommonModule,

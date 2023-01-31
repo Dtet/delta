@@ -12,7 +12,10 @@
 
 <h2 mat-dialog-title>Job Application</h2>
 <mat-dialog-content>
-  <app-form 
-    [questions]="questions$" [isDialog]="true"
-    (close)="closeDialog()" (submit)="closeDialog()"></app-form>
+  <app-form
+    [questions]="questions$"
+    [isDialog]="true"
+    (close)="closeDialog()"
+    (submit)="closeDialog()"
+  ></app-form>
 </mat-dialog-content>

@@ -1,8 +1,12 @@
+import { IDropdownQuestionOptions } from './../models/filter.model';
 import { QuestionBase } from "./form-select";
 
 export class DropdownQuestion extends QuestionBase<string> {
     override controlType = 'dropdown';
-    override options: {key: string, value: string}[] = [];
+    override options: { key: string, value: string }[] = [];
 
-  
+    constructor(options: IDropdownQuestionOptions = {}) {
+        super(options);
+        this.options = options['options'] || [];
+    }
 }

@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableComponent } from '@shared/components/table/table.component';
+import { TablaComponent } from './pages/tabla/tabla.component';
+
 
 const routes: Routes = [
-  {
-    path: 'tabla',
-    component: TableComponent
-  }
+
 ];
 
 @NgModule({
