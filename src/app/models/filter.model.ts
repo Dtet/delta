@@ -23,7 +23,7 @@ export interface IRadioQuestionOption {
   key?: string;
   label?: string;
   order?: number;
-  options?: { key: string; value: string }[];
+  option?: { key: string; value: string }[];
 }
 
 export interface IDropdownQuestionOptions {
