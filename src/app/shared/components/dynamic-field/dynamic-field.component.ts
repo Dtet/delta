@@ -10,45 +10,45 @@ import { DynamicFieldSelectComponent } from './dynamic-field-select/dynamic-fiel
 })
 export class DynamicFieldComponent implements AfterViewInit{
 
-  supportedDynamicComponents = [
-    {
-      name: 'text',
-      component: DynamicFieldInputComponent
-    },
-    {
-      name: 'select',
-      component: DynamicFieldSelectComponent
-    },
-    {
-      name: 'select',
-      component: DynamicFieldInputComponent
-    },
-    {
-      name: 'date',
-      component: DynamicFieldInputComponent
-    }
-  ]
+  // supportedDynamicComponents = [
+  //   {
+  //     name: 'text',
+  //     component: DynamicFieldInputComponent
+  //   },
+  //   {
+  //     name: 'select',
+  //     component: DynamicFieldSelectComponent
+  //   },
+  //   {
+  //     name: 'select',
+  //     component: DynamicFieldInputComponent
+  //   },
+  //   {
+  //     name: 'date',
+  //     component: DynamicFieldInputComponent
+  //   }
+  // ]
 
-  @ViewChild('dynamicInputContainer', {read: ViewContainerRef})
-  dynamicInputContainer!: ViewContainerRef;
-  @Input() field: any;
-  formName!: FormGroup;
+  // @ViewChild('dynamicInputContainer', {read: ViewContainerRef})
+  // dynamicInputContainer!: ViewContainerRef;
+  // @Input() field: any;
+  // formName!: FormGroup;
 
-  constructor(private formgroupDirective: FormGroupDirective, private cd: ChangeDetectorRef){}
+  // constructor(private formgroupDirective: FormGroupDirective, private cd: ChangeDetectorRef){}
 
   ngAfterViewInit(): void {
-    this.registerDynamicField();
+    // this.registerDynamicField();
   }
-  registerDynamicField(){
-    this.dynamicInputContainer.clear();
-    const componentInstance = this.getComponentByType(this.field.type)
-    const dynamicComponent = this.dynamicInputContainer.createComponent(componentInstance)
-    dynamicComponent.setInput('field', this.field);
-    this.cd.detectChanges();
-  }
+  // registerDynamicField(){
+  //   this.dynamicInputContainer.clear();
+  //   const componentInstance = this.getComponentByType(this.field.type)
+  //   const dynamicComponent = this.dynamicInputContainer.createComponent(componentInstance)
+  //   dynamicComponent.setInput('field', this.field);
+  //   this.cd.detectChanges();
+  // }
 
-  getComponentByType(type: string):any {
-    let componentDynamic = this.supportedDynamicComponents.find(c => c.name === type);
-    return componentDynamic!.component || DynamicFieldInputComponent;
-  }
+  // getComponentByType(type: string):any {
+  //   let componentDynamic = this.supportedDynamicComponents.find(c => c.name === type);
+  //   return componentDynamic!.component || DynamicFieldInputComponent;
+  // }
 }

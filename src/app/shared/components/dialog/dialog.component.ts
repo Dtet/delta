@@ -12,30 +12,31 @@ import { QuestionService } from '@shared/services/question.service';
   providers: [ QuestioncontrolService ]
 })
 export class DialogComponent implements OnInit {
-  @Input() questions$: QuestionBase<any>[] = [];
-  constructor(
-    private qcs: QuestioncontrolService,
-    private _snackBar: MatSnackBar,
-    public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IDialogData,
-    private service: QuestionService
-    // public dialogRef: MatDialogRef<DialogComponent>,
-    // @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  // ) { this.questions$ = this.data.questions; }
-  ) { this.questions$ = service.getQuestions(); }
+//   @Input() questions$: QuestionBase<any>[] = [];
+//   constructor(
+//     private qcs: QuestioncontrolService,
+//     private _snackBar: MatSnackBar,
+//     public dialogRef: MatDialogRef<DialogComponent>,
+//     @Inject(MAT_DIALOG_DATA) public data: IDialogData,
+//     private service: QuestionService
+//     // public dialogRef: MatDialogRef<DialogComponent>,
+//     // @Inject(MAT_DIALOG_DATA) public data: DialogData,
+//   // ) { this.questions$ = this.data.questions; }
+//   ) { this.questions$ = service.getQuestions(); }
 
-  // onNoClick(): void {
-  //   this.dialogRef.close();
+//   // onNoClick(): void {
+//   //   this.dialogRef.close();
+//   // }
+//   closeDialog() {
+  //     this.dialogRef.close();
+  //   }
+  
   // }
-  ngOnInit(): void {
-      
+  
+  // export interface IDialogData {
+    //   questions: QuestionBase<any>[]
+    
+    ngOnInit(): void {
+       
+    }
   }
-  closeDialog() {
-    this.dialogRef.close();
-  }
-
-}
-
-export interface IDialogData {
-  questions: QuestionBase<any>[]
-}

@@ -57,4 +57,7 @@ export class FacultativoService {
     return this.http.post(this.facultativoUrl, this.facultativoBody, options);
   }
 
+    sendSelectedOption(){
+      return this.getData({selectedOption: this.sendSelectedOption}).subscribe(res => {this.getData = res})
+    }
 }

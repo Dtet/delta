@@ -8,14 +8,14 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 })
 export class DynamicErrorComponent implements OnInit {
   
-  @Input() fieldName!: string;
-  formName!: FormGroup;
-  constructor(
-    private formGroupDirective: FormGroupDirective, 
-  ) { }
+  // @Input() fieldName!: string;
+  // formName!: FormGroup;
+  // constructor(
+  //   private formGroupDirective: FormGroupDirective, 
+  // ) { }
 
   ngOnInit(): void {
-    this.formName = this.formGroupDirective.control;
+    // this.formName = this.formGroupDirective.control;
   }
   
 

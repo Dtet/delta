@@ -10,13 +10,13 @@ import { QuestionBase } from 'src/app/utils/form-select';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent  {
-  @Input() question!: QuestionBase<any>;
-  @Input() form!: FormGroup;
+  // @Input() question!: QuestionBase<any>;
+  // @Input() form!: FormGroup;
 
-  people$!: Observable<IFiltro[]> ;
+  // people$!: Observable<IFiltro[]> ;
 
-  get isValid() {return this.form.controls [this.question.key].valid; }
-  constructor() { }
+  // get isValid() {return this.form.controls [this.question.key].valid; }
+  // constructor() { }
   ngOnInit () {
     // this.people$ = this.dataService.getPeople();
   }

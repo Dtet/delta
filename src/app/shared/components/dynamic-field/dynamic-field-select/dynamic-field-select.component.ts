@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class DynamicFieldSelectComponent {
 
-@Input() field: any;
-@Input() formName!: FormGroup;
+// @Input() field: any;
+// @Input() formName!: FormGroup;
 
 }

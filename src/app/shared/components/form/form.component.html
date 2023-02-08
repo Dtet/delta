@@ -1,4 +1,18 @@
-<div>
+<form [formGroup]="form">
+  <ng-container *ngFor="let field of fields">
+  <div *ngIf="field.type === 'autocomplete-select'">
+    <mat-form-field>
+      <input type="text" matInput formControlName="{{field.name}}" [matAutocomplete]="auto">
+      <mat-autocomplete  #auto="matAutocomplete">
+        <mat-option *ngFor="let option of field.options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  </ng-container>
+</form>
+<!-- <div>
   <form (ngSubmit)="onSubmit()" FormGroup="form">
     <div *ngFor="let question of questions" class="form-row">
       <app-select [question]="question" [form]="form"> </app-select>
@@ -17,4 +31,4 @@
       </button>
     </div>
   </form>
-</div>
+</div> -->

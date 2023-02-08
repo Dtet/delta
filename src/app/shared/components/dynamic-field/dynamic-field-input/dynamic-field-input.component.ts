@@ -8,10 +8,10 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 })
 export class DynamicFieldInputComponent {
 
-  @Input() field: any;
-  formName!: FormGroup;
-  constructor(private formgroupDirective: FormGroupDirective) {
-    this.formName = formgroupDirective.control;
-  }
+  // @Input() field: any;
+  // formName!: FormGroup;
+  // constructor(private formgroupDirective: FormGroupDirective) {
+  //   this.formName = formgroupDirective.control;
+  // }
 
 }
