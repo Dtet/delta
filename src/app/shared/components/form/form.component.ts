@@ -1,19 +1,18 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { IFiltro } from '@models/filter.model';
-import { QuestioncontrolService } from '@shared/services/questioncontrol.service';
-import { QuestionBase } from 'src/app/utils/form-select';
+import { Observable } from 'rxjs';
+// import { QuestionBase } from 'src/app/utils/form-select';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-  providers: [ QuestioncontrolService ]
+  providers: [  ]
 })
 export class FormComponent implements OnInit {
   form!: FormGroup;
-  selectedOption!: IFiltro;
+  selectedOption!: Observable<IFiltro[]>;
   fields = [
     { name: 'facultativo', type: 'autocomplete-select', options: []},
     { name: 'fec_registro', type: 'autocomplete-select', options: []},
@@ -35,7 +34,7 @@ export class FormComponent implements OnInit {
     { name: 'nrofa_especitifico', type: 'autocomplete-select', options: []}
   ];
 
-  onOptionSelected(option: IFiltro) {
+  onOptionSelected(option: Observable<IFiltro[]>) {
     this.selectedOption = option;
   }
   constructor(private formBuilder: FormBuilder){

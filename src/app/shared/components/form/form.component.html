@@ -2,7 +2,10 @@
   <ng-container *ngFor="let field of fields">
   <div *ngIf="field.type === 'autocomplete-select'">
     <mat-form-field>
-      <input type="text" matInput formControlName="{{field.name}}" [matAutocomplete]="auto">
+      <input type="text" 
+      matInput 
+      formControlName="{{field.name}}" 
+      [matAutocomplete]="auto">
       <mat-autocomplete  #auto="matAutocomplete">
         <mat-option *ngFor="let option of field.options" [value]="option">
           {{option}}

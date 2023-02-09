@@ -1,15 +1,13 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { QuestioncontrolService } from '@shared/services/questioncontrol.service';
-import { QuestionBase } from 'src/app/utils/form-select';
-import { QuestionService } from '@shared/services/question.service';
+
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css'],
-  providers: [ QuestioncontrolService ]
+  providers: [ ]
 })
 export class DialogComponent implements OnInit {
 //   @Input() questions$: QuestionBase<any>[] = [];

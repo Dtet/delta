@@ -2,7 +2,7 @@ import { IFiltro } from './../../../models/filter.model';
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { QuestionBase } from 'src/app/utils/form-select';
+
 
 @Component({
   selector: 'app-select',

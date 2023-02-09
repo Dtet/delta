@@ -36,9 +36,9 @@ export class FilterComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.subs.add(this.dataService.getInfo().subscribe(data => {
-      this.options = data;
-    }));
+    // this.subs.add(this.dataService.getInfo().subscribe(data => {
+    //   this.options = data;
+    // }));
   }
 
 }

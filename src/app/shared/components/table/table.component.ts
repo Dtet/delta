@@ -10,21 +10,38 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
 const headerNames: { [key: string]: string } = {
+  asegurado: 'Asegurado',
   cdCedente: 'Código de Cedente',
   cdCorredor: 'Código de Corredor',
-  grupoRamo: 'Grupo Ramo',
-  cdRamo: 'Código de Ramo',
+  cdDomicilio: 'Código de Domicilio',
+  cdEstado: 'Código de Estado',
+  cdFacultativo: 'Código de Facultativo',
   cdIndole: 'Código de Indole',
   cdMoneda: 'Código de Moneda',
-  cdTpFacultativo: 'Código tipo de Facultativo',
+  cdRamo: 'Código de Ramo',
   cdTpNegocio: 'Código tipo de Negocio',
-  cdEstado: 'Código de Estado',
-  usrRegistro: 'Usuario',
+  cdTpOcupacion: 'Código tipo de Ocupación',
   cedente: 'Cedente',
   corredor: 'Corredor',
+  domicilio: 'Domicilio',
+  estado: 'Estado',
+  expediente: 'Expediente',
+  feCiaDesde: 'Fecha Desde',
+  feCiaHasta: 'Fecha Hasta',
+  feRegistro: 'Fecha de Registro',
+  idFacultativo: 'ID',
   indole: 'Indole',
+  moneda: 'Moneda',
   poliza: 'Poliza',
-  moneda: 'Moneda'
+  ramo: 'Ramo',
+  ramoRenovable: 'Ramo Renovable',
+  renovado: 'Renovado',
+  serie: 'Serie',
+  suscriptor: 'Suscriptor',
+  tpFacultativo: 'Tipo de Facultativo',
+  tpNegocio: 'Tipo de Negocio',
+  tpOcupacion: 'Tipo de Ocupación',
+  usrRegistro: 'Usuario',
 };
 
 @Component({
@@ -75,6 +92,7 @@ export class TableComponent implements OnInit, AfterViewInit {
         const { formattedData, keys } = facultativoListAdapter(
           resp.result.data.listado
         );
+        console.log(resp.result.data.listado)
         this.dataSource.data = formattedData;
         this.columns = keys.map((key) => ({
           columnDef: key,
