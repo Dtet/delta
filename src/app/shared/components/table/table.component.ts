@@ -8,6 +8,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { FormComponent } from '../form/form.component';
 
 const headerNames: { [key: string]: string } = {
   asegurado: 'Asegurado',
@@ -75,7 +76,7 @@ export class TableComponent implements OnInit, AfterViewInit {
     ) { }
 
     openDialog(): void {
-      const dialogRef = this.dialog.open(DialogComponent, {
+      const dialogRef = this.dialog.open(FormComponent, {
         width: '800px',
         data: {name: this.name},
       });

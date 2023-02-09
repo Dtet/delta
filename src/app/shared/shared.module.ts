@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material/dialog';
 import { MaterialModule } from './../material-design/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

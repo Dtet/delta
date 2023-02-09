@@ -3,6 +3,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
+
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -33,7 +34,10 @@ export class DialogComponent implements OnInit {
   
   // export interface IDialogData {
     //   questions: QuestionBase<any>[]
-    
+    constructor(
+      
+    ) {}
+  
     ngOnInit(): void {
        
     }
