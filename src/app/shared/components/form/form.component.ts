@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { IFiltro } from '@models/filter.model';
 import { Observable } from 'rxjs';
 // import { QuestionBase } from 'src/app/utils/form-select';
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
   providers: [  ]
 })
 export class FormComponent implements OnInit {
+  
   form!: FormGroup;
   selectedOption!: Observable<IFiltro[]>;
   fields = [
@@ -37,7 +39,8 @@ export class FormComponent implements OnInit {
   onOptionSelected(option: Observable<IFiltro[]>) {
     this.selectedOption = option;
   }
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<FormComponent>){
     this.form = this.formBuilder.group({});
 
     this.fields.forEach(field => {
@@ -48,7 +51,9 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
   // @Input() questions: QuestionBase<string>[] | null = [];
   // @Input() isDialog!: boolean;

@@ -15,3 +15,20 @@
     color: #aaa;
     cursor: auto;
   }
+
+  .mat-table {
+    overflow-x: scroll;
+  }
+  
+  .mat-header-cell {
+    background-color: lightgray;
+  }
+  
+  .cell-padding-header{
+    padding: 10px;
+    text-align: justify;
+  }
+  .cell-padding{
+    padding: 10px;
+  }
+  

@@ -7,7 +7,6 @@ import facultativoListAdapter from 'src/app/utils/orden';
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { FormComponent } from '../form/form.component';
 
 const headerNames: { [key: string]: string } = {
@@ -77,13 +76,16 @@ export class TableComponent implements OnInit, AfterViewInit {
 
     openDialog(): void {
       const dialogRef = this.dialog.open(FormComponent, {
-        width: '800px',
-        data: {name: this.name},
-      });
+        width: '50%',
+      })
+      // const dialogRef = this.dialog.open(FormComponent, {
+      //   width: '800px',
+      //   data: {name: this.name},
+      // });
 
       dialogRef.afterClosed().subscribe( result => {
         console.log('cerrado');
-        this.name = result;
+        
       })
     }
   

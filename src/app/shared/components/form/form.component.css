@@ -1,3 +1,9 @@
-.form-row button {
-  margin-right: 5px;
+mat-form-field {
+  width: 580px;
+}
+.formulario{
+  width: 250px;
+}
+.input-field {
+  width: 50%;
 }
